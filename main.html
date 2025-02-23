@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Sphere</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="flex h-screen bg-gray-900 text-white">
+
+    <!-- Sidebar for Previous Chats & New Chat Button -->
+    <div class="w-1/4 bg-gray-800 shadow-lg p-4 overflow-y-auto relative">
+        <h3 class="text-xl font-semibold mb-4">Previous Chats</h3>
+        <ul id="chat-history" class="space-y-2">
+            <li class="p-2 bg-gray-700 rounded">No previous chats</li>
+        </ul>
+        <button id="new-chat-btn" class="absolute top-4 right-4 p-2 bg-blue-500 text-white rounded transition-transform transform hover:scale-105">🔄</button>
+    </div>
+
+    <!-- Chat Area -->
+    <div class="flex-1 flex flex-col p-6 relative">
+        <div class="flex justify-between items-center">
+            <h2 class="text-2xl font-bold">Chat Sphere</h2>
+
+            <!-- Profile Icon -->
+            <div class="relative">
+                <button id="profile-btn" class="w-10 h-10 bg-gray-700 text-white border border-gray-500 rounded-full flex items-center justify-center hover:bg-gray-600 transition">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 14c4.418 0 8 1.79 8 4v2H4v-2c0-2.21 3.582-4 8-4z"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                </button>
+                <div id="profile-menu" class="hidden absolute right-0 mt-2 w-40 bg-gray-800 shadow-md rounded-lg p-2">
+                    <a href="login.html" class="block px-4 py-2 text-white hover:bg-gray-700 transition">Login</a>
+                    <a href="#" class="block px-4 py-2 text-white hover:bg-gray-700 transition">Profile</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chat Box -->
+        <div class="flex-1 bg-gray-800 shadow-lg p-4 rounded-lg overflow-y-auto mt-4" id="chat-box">
+            <div class="p-3 bg-blue-500 rounded-lg w-max text-white">Hello! How can I assist you?</div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="mt-4 flex items-center">
+            <input type="text" id="user-input" placeholder="Type your message..." class="flex-1 p-2 border rounded-l-lg bg-gray-700 text-white focus:ring-2 focus:ring-blue-500">
+            <button id="send-btn" class="p-2 bg-blue-500 text-white rounded-r-lg transition-transform transform hover:scale-105">Send</button>
+        </div>
+
+        <!-- Reset Chat Button -->
+        <div class="mt-4 flex justify-end">
+            <button id="reset-chat-btn" class="p-2 bg-red-500 text-white rounded-lg transition-transform transform hover:scale-105">Reset Chat</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
